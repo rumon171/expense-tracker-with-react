@@ -1,6 +1,6 @@
-function BalanceContainer() {
+function BalanceContainer(props: any) {
     return (
-        <h2 id="balance-container" className="balance-container">
+        <h2 id={props.id} className={props.className}>
             Total Balance:
             <span id="balance"></span>
         </h2>

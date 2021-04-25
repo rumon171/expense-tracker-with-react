@@ -1,9 +1,8 @@
+import InputItem from './InputItem';
+
 function ExpenseInput() {
     return (
-    <div>
-        <label>Income</label>
-        <input id="income" className="income" type="text" placeholder="Your income"></input>
-    </div>
+      <InputItem title="Expense" id="expenseItem" type="text" placeholder="Enter item" />
     );
   }
   

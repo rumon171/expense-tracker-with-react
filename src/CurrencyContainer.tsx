@@ -1,8 +1,8 @@
-function CurrencyContainer() {
+function CurrencyContainer(props: any) {
     return (
-<div className="currency-container">
+<div className={props.className}>
             <h3>Currency</h3>
-            <select id="currency">
+            <select id="currency" defaultValue={'EUR'}>
                 <option value="AED">AED</option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>
@@ -18,7 +18,7 @@ function CurrencyContainer() {
                 <option value="DKK">DKK</option>
                 <option value="DOP">DOP</option>
                 <option value="EGP">EGP</option>
-                <option value="EUR" selected>EUR</option>
+                <option value="EUR">EUR</option>
                 <option value="FJD">FJD</option>
                 <option value="GBP">GBP</option>
                 <option value="GTQ">GTQ</option>

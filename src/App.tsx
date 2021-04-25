@@ -10,16 +10,16 @@ import AddButton from './AddButton';
 
 
 function App() {
-  const appTitle: string = "sdfdfsd Tracker";
+  const appTitle: string = "Expense Tracker";
 
   return (
     <div className="App">
-      <ErrorMessage />
+      <ErrorMessage id="error-message" className="error-message"/>
       <div>
         <h1>{appTitle}</h1>
-        <BalanceContainer />
-        <CurrencyContainer />
-        <IncomeExpensesContainer />
+        <BalanceContainer id="balance-container" className="balance-container"/>
+        <CurrencyContainer className="currency-container"/>
+        <IncomeExpensesContainer className="income-expenses-container" />
       </div>
       <form>
         <ExpenseInput />
