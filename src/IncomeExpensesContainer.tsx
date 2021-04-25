@@ -1,16 +1,17 @@
+import * as React from 'react'
 import InputItem from './InputItem';
 
-function IncomeExpensesContainer(props: any) {
+export default function IncomeExpensesContainer(props: any) {
     const showCurrentBalance = () => {
         let balance: number = 0;
         //const incomeEntered: number = +incomeElement.value;
-    
-       // balance = incomeEntered - totalExpenses;
-    
-       // balanceElement.innerText = "" + balance;
-       // incomeElement.classList.add("has-value");
-       // balanceContainerElement.classList.add("visible");
-      } 
+
+        // balance = incomeEntered - totalExpenses;
+
+        // balanceElement.innerText = "" + balance;
+        // incomeElement.classList.add("has-value");
+        // balanceContainerElement.classList.add("visible");
+        } 
 
     return (
     <div className={props.className}>
@@ -21,6 +22,4 @@ function IncomeExpensesContainer(props: any) {
         </div> 
     </div>
     );
-  }
-  
-export default IncomeExpensesContainer;
+}

@@ -9,26 +9,24 @@ import AddButton from './AddButton';
 
 
 
-function App() {
-  const appTitle: string = "Expense Tracker";
+export default function App() {
+    const appTitle: string = "Expense Tracker";
 
-  return (
-    <div className="App">
-      <ErrorMessage id="error-message" className="error-message"/>
-      <div>
-        <h1>{appTitle}</h1>
-        <BalanceContainer id="balance-container" className="balance-container"/>
-        <CurrencyContainer className="currency-container"/>
-        <IncomeExpensesContainer className="income-expenses-container" />
+    return (
+      <div className="App">
+        <ErrorMessage id="error-message" className="error-message"/>
+        <div>
+          <h1>{appTitle}</h1>
+          <BalanceContainer id="balance-container" className="balance-container"/>
+          <CurrencyContainer className="currency-container"/>
+          <IncomeExpensesContainer className="income-expenses-container" />
+        </div>
+        <form>
+          <ExpenseInput />
+          <AmountInput />
+        </form>
+          <AddButton content="Add expense"/>
+          <div id="list"></div>
       </div>
-      <form>
-        <ExpenseInput />
-        <AmountInput />
-      </form>
-        <AddButton content="Add expense"/>
-        <div id="list"></div>
-    </div>
-  );
-}
-
-export default App;
+    );
+  }

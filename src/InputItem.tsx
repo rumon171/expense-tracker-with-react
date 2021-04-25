@@ -1,6 +1,4 @@
-function InputItem(props: any) {
-
-
+export default function InputItem(props: any) {
     return (
         <div>
             <label>{props.title}</label>
@@ -8,5 +6,3 @@ function InputItem(props: any) {
         </div>
     );
   }
-  
-export default InputItem;

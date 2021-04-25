@@ -1,4 +1,4 @@
-function AmountInput() {
+export default function AmountInput() {
     return (
     <div>
         <label>Amount</label>
@@ -6,5 +6,3 @@ function AmountInput() {
     </div>
     );
   }
-  
-export default AmountInput;
