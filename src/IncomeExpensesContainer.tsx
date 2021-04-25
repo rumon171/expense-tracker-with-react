@@ -10,7 +10,8 @@ export default class IncomeExpensesContainer extends Component {
     showCurrentBalance = (e: any): number => {
         this.setState({ incomeEntered : e.target.value });
 
-        console.log('state changed');
+        console.log('entered value ', e.target.value );
+        console.log('state value', this.state.incomeEntered);
 
         return 1;
     };
