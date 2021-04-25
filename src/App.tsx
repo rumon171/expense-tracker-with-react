@@ -19,7 +19,7 @@ export default function App() {
           <h1>{appTitle}</h1>
           <BalanceContainer id="balance-container" className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
-          <IncomeExpensesContainer className="income-expenses-container" />
+          <IncomeExpensesContainer />
         </div>
         <form>
           <ExpenseInput />
