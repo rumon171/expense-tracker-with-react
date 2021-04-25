@@ -7,14 +7,13 @@ export default class IncomeExpensesContainer extends Component {
         incomeEntered: 0
     };
 
-    showCurrentBalance = (): number => {
-        console.log('aaa');
+    showCurrentBalance = (e: any): number => {
+        this.setState({ incomeEntered : e.target.value });
 
+        console.log('state changed');
 
         return 1;
     };
-
-
     // const showCurrentBalance = () => {
     //     let balance: number = 0;
         //const incomeEntered: number = +incomeElement.value;
@@ -24,9 +23,7 @@ export default class IncomeExpensesContainer extends Component {
         // balanceElement.innerText = "" + balance;
         // incomeElement.classList.add("has-value");
         // balanceContainerElement.classList.add("visible");
-        // } 
-
-        
+        // }  
     render() {
         const { state } = this;
 
