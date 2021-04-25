@@ -3,12 +3,15 @@ import InputItem from './InputItem';
 
 export default class IncomeExpensesContainer extends Component {
     state = {
-        currentBalance: 0,
+        balance: 0,
+        incomeEntered: 0
     };
 
     showCurrentBalance = (): number => {
         console.log('aaa');
-        return 3;
+
+
+        return 1;
     };
 
 
@@ -25,9 +28,11 @@ export default class IncomeExpensesContainer extends Component {
 
         
     render() {
+        const { state } = this;
+
         return (
         <div className="income-expenses-container">
-            <InputItem onClick={this.showCurrentBalance} title="Income" id="income" className="income" type="text" placeholder="Your income" />
+            <InputItem onChange={this.showCurrentBalance} value={state.incomeEntered} title="Income" id="income" className="income" type="text" placeholder="Your income" />
             <div>
                 <h3>Expenses</h3>
                 <div id="expensesTotal">0</div>
