@@ -4,34 +4,29 @@ import InputItem from './InputItem';
 export default class IncomeExpensesContainer extends Component {
     state = {
         incomeEntered: 0,
-        class: '',
         expensesTotal: 0
     };
 
     updateState = (e: any): void => {
         this.setState({ 
-            incomeEntered : e.target.value,
-            class: 'has-value' 
+            incomeEntered : e.target.value
         });
 
-        console.log('entered value ', e.target.value );
-
-        //incomeElement.classList.add("has-value");
-        //console.log('state class ', this.state.class);
+        console.log('incomeEntered entered by user value ', e.target.value );
 
         this.showCurrentBalance();
+
+        if (e.target.class !== 'has-value'){
+            e.target.className = 'has-value';
+        }
     };
 
     showCurrentBalance = (): void => {
-        console.log('aaaa ');
-
-        console.log('state value', this.state.incomeEntered);
-
+        console.log('incomeEntered state value', this.state.incomeEntered);
+        console.log('-----');
         //let balance: number = 0;
         //const incomeEntered: number = +incomeElement.value;
-
         // balance = incomeEntered - totalExpenses;
-
         // balanceElement.innerText = "" + balance;
         // incomeElement.classList.add("has-value");
         // balanceContainerElement.classList.add("visible");
@@ -42,7 +37,7 @@ export default class IncomeExpensesContainer extends Component {
 
         return (
         <div className="income-expenses-container">
-            <InputItem onChange={this.updateState} value={state.incomeEntered} className="income" title="Income" id="income" type="text" placeholder="Your income" />
+            <InputItem onChange={this.updateState} value={state.incomeEntered} title="Income" id="income" type="text" placeholder="Your income" />
             <div>
                 <h3>Expenses</h3>
                 <div id="expensesTotal">{state.expensesTotal}</div>
