@@ -24,8 +24,8 @@ export default function App() {
         <form>
           <ExpenseInput />
           <AmountInput />
-        </form>
           <AddButton content="Add expense"/>
+        </form>
           <div id="list"></div>
       </div>
     );
