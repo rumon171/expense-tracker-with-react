@@ -4,19 +4,23 @@ import ErrorMessage from './ErrorMessage';
 import BalanceContainer from './BalanceContainer';
 import CurrencyContainer from './CurrencyContainer';
 import IncomeExpensesContainer from './IncomeExpensesContainer';
-import ExpenseInput from './ExpenseInput';
-import AmountInput from './AmountInput';
+import ExpenseAmountInputContainer from './ExpenseAmountInputContainer';
 import AddButton from './AddButton';
+import { useState } from 'react';
 
 
 
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
+    const [Expense, setExpense] = useState<number>(0);
+    const [Amount, setAmount] = useState<number>(0);
+
     // Add item to list
     const addItemToList = (e: any) => {
-      e.preventDefault();
       console.log('addItemToList works ');
+      console.log('ExpenseInputstate ', Expense);
+      console.log('AmountInputstate ', Amount);
   }
 
     return (
@@ -28,12 +32,12 @@ export default function App() {
           <CurrencyContainer className="currency-container"/>
           <IncomeExpensesContainer />
         </div>
-        <form>
-          <ExpenseInput />
-          <AmountInput />
-          <AddButton content="Add expense" onClick={addItemToList} />
-        </form>
-          <div id="list"></div>
+        <ExpenseAmountInputContainer 
+          addExpense={setExpense} 
+          addAmount={setAmount} 
+        />
+        <AddButton content="Add expense" onClick={addItemToList} />
+        <div id="list"></div>
       </div>
     );
-  }
+}
