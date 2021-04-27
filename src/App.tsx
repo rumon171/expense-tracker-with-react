@@ -9,7 +9,6 @@ import AddButton from './AddButton';
 import { useState } from 'react';
 
 
-
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
@@ -32,7 +31,7 @@ export default function App() {
           <IncomeExpensesContainer />
         </div>
         <ExpenseAmountInputContainer 
-          onChange={setExpense} 
+         // onChange={setExpense} 
         />
         <AddButton content="Add expense" onClick={addItemToList} />
         <div id="list"></div>

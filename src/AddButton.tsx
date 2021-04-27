@@ -1,8 +1,11 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 
 function AddButton(props: any) {
     return (
-            <button id="addExpenseButton" className="btn" onClick={props.onClick}>{props.content}</button>
+        <Button id="addExpenseButton" className="btn" onClick={props.onClick} variant="contained" color="primary">
+        {props.content}
+    </Button>
         );
     }
 

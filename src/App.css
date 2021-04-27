@@ -105,17 +105,8 @@ label {
   margin: 5px 0;
 }
 
-.btn {
-  background: var(--primary-color);
-  color: var(--primary-light-color);;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
-  padding: 10px 20px;
-  margin: 0.5em 0 1em;
-  border-style: none;
+.btn { 
   width: 100%;
-  cursor: pointer;
 }
 
 .delete-btn {

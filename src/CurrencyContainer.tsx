@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CurrencyContainer(props: any) {
 return (
-            <div className={props.className}>
+           <div className={props.className}>
                 <h3>Currency</h3>
                 <select id="currency" defaultValue={'EUR'}>
                     <option value="AED">AED</option>

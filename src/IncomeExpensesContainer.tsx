@@ -2,21 +2,20 @@ import React, { useState } from "react";
 import InputItem from './InputItem';
 //import BalanceContainer from './BalanceContainer';
 const IncomeExpensesContainer: React.FC = () => {
-    const [state, setState] = useState<boolean>(true);
+    const [state, setState] = useState<number>(0);
 
-   /* const updateState = (e: any): void => {
-        this.setState({ 
-            incomeEntered : e.target.value
-        });
+  /*  const updateState = (e: any): void => {
+        setState();
 
         console.log('incomeEntered entered by user value ', e.target.value );
 
-        this.showCurrentBalance();
+        //this.showCurrentBalance();
 
         if (e.target.class !== 'has-value'){
             e.target.className = 'has-value';
         }
     };
+    
 
     const showCurrentBalance = (): void => {
         console.log('incomeEntered state value', this.state.incomeEntered);
