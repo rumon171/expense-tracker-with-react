@@ -59,6 +59,7 @@ h2 {
   font-size: 12px;
   border-style: none;
   cursor: pointer;
+  margin: 40px;
   padding: 5px 20px 5px 10px;
   appearance: none;
   -moz-appearance: none;
@@ -177,4 +178,8 @@ label {
 
 .inputContainer {
   margin: 20px 0;
+}
+
+.centered {
+  text-align: center;
 }
