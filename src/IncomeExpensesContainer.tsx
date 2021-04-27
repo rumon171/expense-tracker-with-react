@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import InputItem from './InputItem';
 //import BalanceContainer from './BalanceContainer';
 export default class IncomeExpensesContainer extends Component {
