@@ -1,3 +1,5 @@
+import React from "react";
+
 function BalanceContainer(props: any) {
     return (
         <h2 id={props.id} className={props.className}>

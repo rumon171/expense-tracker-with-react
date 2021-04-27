@@ -1,13 +1,10 @@
-import { Component } from 'react';
+import React, { useState } from "react";
 import InputItem from './InputItem';
 //import BalanceContainer from './BalanceContainer';
-export default class IncomeExpensesContainer extends Component {
-    state = {
-        incomeEntered: 0,
-        expensesTotal: 0
-    };
+const IncomeExpensesContainer: React.FC = () => {
+    const [state, setState] = useState<boolean>(true);
 
-    updateState = (e: any): void => {
+   /* const updateState = (e: any): void => {
         this.setState({ 
             incomeEntered : e.target.value
         });
@@ -21,7 +18,7 @@ export default class IncomeExpensesContainer extends Component {
         }
     };
 
-    showCurrentBalance = (): void => {
+    const showCurrentBalance = (): void => {
         console.log('incomeEntered state value', this.state.incomeEntered);
         console.log('-----');
         //let balance: number = 0;
@@ -30,19 +27,19 @@ export default class IncomeExpensesContainer extends Component {
         // balanceElement.innerText = "" + balance;
         // incomeElement.classList.add("has-value");
         // balanceContainerElement.classList.add("visible");
-    };
+    }; */
  
-    render() {
-        const { state } = this;
+       // const { state } = this;
 
-        return (
-        <div className="income-expenses-container">
-            <InputItem onChange={this.updateState} value={state.incomeEntered} title="Income" id="income" type="text" placeholder="Your income" />
-            <div>
-                <h3>Expenses</h3>
-                <div id="expensesTotal">{state.expensesTotal}</div>
-            </div> 
-        </div>
-        );
-    }
+    return (
+    <div className="income-expenses-container">
+        <InputItem title="Income" id="income" type="text" placeholder="Your income" />
+        <div>
+            <h3>Expenses</h3>
+            <div id="expensesTotal">expensesTotal here</div>
+        </div> 
+    </div>
+    );
   }
+
+  export default IncomeExpensesContainer;

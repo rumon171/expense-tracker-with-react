@@ -1,14 +1,12 @@
-import { Component } from 'react';
+import React, { useState } from "react";
 import InputItem from './InputItem';
 
-export default class ExpenseInput extends Component {
-    state = {
-      expenseEntered: 0
-    };
+const ExpenseInput: React.FC = () => {
+    //const [state, setState] = useState<boolean>(true);
 
-    render() {
-      return (
-        <InputItem title="Expense" id="expenseItem" type="text" placeholder="Enter item" />
-      );
-    } 
+    return (
+      <InputItem title="Expense" id="expenseItem" type="text" placeholder="Enter item" />
+    );
   }
+
+export default ExpenseInput;

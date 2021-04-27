@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function CurrencyContainer(props: any) {
 return (
             <div className={props.className}>

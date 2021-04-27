@@ -1,17 +1,15 @@
-import { Component } from 'react';
+import React, { useState } from "react";
 
-export default class AmountInput extends Component {
-    state = {
-        expenseAmountEntered: 0
-      };
+const AmountInput: React.FC = () => {
+    //const [state, setState] = useState<boolean>(true);
 
-    render() {
-        return (
-        <div>
-            <label>Amount</label>
-            <input id="expenseAmount" type="number" min="1" />
-        </div>
-        );
-    } 
+    return (
+    <div>
+        <label>Amount</label>
+        <input id="expenseAmount" type="number" min="1" />
+    </div>
+    );
   }
 
+
+export default AmountInput;
