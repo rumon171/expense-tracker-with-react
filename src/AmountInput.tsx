@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import InputItem from './InputItem';
+import TextField from '@material-ui/core/TextField';
 
 const AmountInput: React.FC = () => {
     //const [state, setState] = useState<boolean>(true);
 
     return (
-    <div>
+   /* <div>
         <label>Amount</label>
-        <input id="expenseAmount" type="number" min="1" />
-    </div>
+        <TextField id="expenseAmount" type="number" label="Enter expense cost" className="full-width" variant="outlined" />
+    </div> */
+     <InputItem title="Amount" id="expenseAmount" type="number" placeholder="Enter expense cost" />
     );
   }
 

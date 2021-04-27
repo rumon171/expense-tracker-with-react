@@ -32,6 +32,7 @@ h1 {
   font-size: 3em;
   font-weight: 300;
   color: var(--primary-color);
+  text-align: center;
 }
 
 h2 {
@@ -78,9 +79,9 @@ h2 {
   margin: 15px 0;
 }
 
-.income-expenses-container div {
+/*.income-expenses-container div {
   margin: 10px;
-}
+}*/
 
 .balance-container {
   display: none;
@@ -105,7 +106,7 @@ label {
   margin: 5px 0;
 }
 
-.btn { 
+.full-width { 
   width: 100%;
 }
 
@@ -172,4 +173,8 @@ label {
 
 .has-value:hover {
   border: 1px solid var(--tertiary-light-color);
+}
+
+.inputContainer {
+  margin: 20px 0;
 }
