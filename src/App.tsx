@@ -12,6 +12,12 @@ import AddButton from './AddButton';
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
+    // Add item to list
+    const addItemToList = (e: any) => {
+      e.preventDefault();
+      console.log('addItemToList works ');
+  }
+
     return (
       <div className="App">
         <ErrorMessage id="error-message" className="error-message"/>
@@ -24,7 +30,7 @@ export default function App() {
         <form>
           <ExpenseInput />
           <AmountInput />
-          <AddButton content="Add expense"/>
+          <AddButton content="Add expense" onClick={addItemToList} />
         </form>
           <div id="list"></div>
       </div>
