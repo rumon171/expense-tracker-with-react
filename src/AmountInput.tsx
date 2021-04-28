@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import InputItem from './InputItem';
-import TextField from '@material-ui/core/TextField';
-
 interface Props {
   onChange: (value: any) => void;
 }

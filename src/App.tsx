@@ -18,11 +18,13 @@ export default function App() {
     const [TotalAmount, setTotalAmount] = useState<number>(0);
 
     // Add item to list
-    const addItemToList = (e: any) => {
+    const AddItemToList = (e: any) => {
+
+
       console.log('ExpenseInputstate ', Expense);
       console.log('AmountInputstate ', Amount);
-      
-      setTotalAmount(prev => prev + Number(Amount));
+
+      setTotalAmount((prev) => prev + Number(Amount));
 
       console.log('TotalAmount ', TotalAmount);
   }
@@ -40,7 +42,7 @@ export default function App() {
           onExpenseChange={setExpense} 
           onAmountChange={setAmount} 
         />
-        <AddButton content="Add expense" onClick={addItemToList} />
+        <AddButton content="Add expense" onClick={AddItemToList} />
         <div id="list">aa</div>
       </div>
     );
