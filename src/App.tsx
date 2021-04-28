@@ -21,7 +21,11 @@ export default function App() {
     // Add item to list
     const AddItemToList = () => {
       setTotalAmount((prev) => prev + Number(Amount));
-  }
+    }
+
+    const CountTotalBalance = () => {
+      setTotalBalance(() => Income - TotalExpensesAmount);
+    }   
 
     return (
       <div className="App">
