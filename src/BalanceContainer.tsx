@@ -1,8 +1,13 @@
-function BalanceContainer(props: any) {
+import React from "react";
+interface Props {
+    className: string;
+  }
+
+  const BalanceContainer: React.FC<Props> = ({className}: Props) =>{
     return (
-        <h2 id={props.id} className={props.className}>
+        <h2 className={className}>
             Total Balance:
-            <span id="balance"></span>
+            <span>30</span>
         </h2>
     );
   }

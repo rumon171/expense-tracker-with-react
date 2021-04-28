@@ -14,7 +14,9 @@ export default function App() {
 
     const [Expense, setExpense] = useState<number>(0);
     const [Amount, setAmount] = useState<number>(0);
-    const [TotalAmount, setTotalAmount] = useState<number>(0);
+    const [TotalExpensesAmount, setTotalAmount] = useState<number>(0);
+    const [Income, setIncome] = useState<number>(0);
+    const [TotalBalance, setTotalBalance] = useState<number>(0);
 
     // Add item to list
     const AddItemToList = () => {
@@ -26,9 +28,9 @@ export default function App() {
         <ErrorMessage id="error-message" className="error-message"/>
         <div>
           <h1>{appTitle}</h1>
-          <BalanceContainer id="balance-container" className="balance-container"/>
+          <BalanceContainer className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
-          <IncomeExpensesContainer totalExpenses={TotalAmount} />
+          <IncomeExpensesContainer totalExpenses={TotalExpensesAmount} />
         </div>
         <ExpenseAmountInputContainer 
           onExpenseChange={setExpense} 
