@@ -31,7 +31,7 @@ export default function App() {
           <IncomeExpensesContainer />
         </div>
         <ExpenseAmountInputContainer 
-         // onChange={setExpense} 
+          onChange={setExpense} 
         />
         <AddButton content="Add expense" onClick={addItemToList} />
         <div id="list"></div>
