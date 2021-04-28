@@ -1,11 +1,18 @@
 import React from "react";
 import TextField from '@material-ui/core/TextField';
 
-export default function InputItem(props: any) {
+function InputItem(props: any) {
     return (
         <div className="inputContainer">
             <label>{props.title}</label>
-            <TextField onChange={({ target: { value } }) => props.onChange(value)} id={props.id} type={props.type} label={props.placeholder} className="full-width" variant="outlined" />
+            <TextField onChange={
+                ({ target: { value } }) => props.onChange(value)} 
+                id={props.id} type={props.type} 
+                label={props.placeholder} 
+                className="full-width" 
+                variant="outlined" />
         </div>
     );
   }
+
+export default InputItem;

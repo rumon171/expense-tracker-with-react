@@ -1,12 +1,22 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 
-function AddButton(props: any) {
+interface Props {
+    content: string;
+    onClick: (value: any) => void;
+  }
+
+const AddButton: React.FC<Props> = ({content, onClick}: Props) => {
     return (
-        <Button id="addExpenseButton" className="full-width" onClick={props.onClick} variant="contained" color="primary">
-            {props.content}
+        <Button 
+            id="addExpenseButton" 
+            className="full-width" 
+            onClick={onClick} 
+            variant="contained" 
+            color="primary">
+            {content}
         </Button>
         );
-    }
+  }
 
 export default AddButton;

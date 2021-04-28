@@ -7,7 +7,12 @@ interface Props {
 const AmountInput: React.FC<Props> = ({onChange}: Props) => {
 
     return (
-     <InputItem title="Amount" onChange={onChange} id="expenseAmount" type="number" placeholder="Expense cost" />
+     <InputItem 
+      title="Amount" 
+      onChange={onChange} 
+      id="expenseAmount" 
+      type="number" 
+      placeholder="Expense cost" />
     );
   }
 

@@ -10,7 +10,11 @@ const IncomeExpensesContainer: React.FC<Props> = ({totalExpenses}: Props) => {
     return (
     <Grid container spacing={1} className="income-expenses-container">
         <Grid item xs={6}>
-            <InputItem title="Income" id="income" type="text" placeholder="Your income" />
+            <InputItem 
+                title="Income" 
+                id="income" 
+                type="text" 
+                placeholder="Your income" />
         </Grid>
         <Grid item xs={6} className="centered">
             <h3>Total Expenses</h3>

@@ -18,14 +18,7 @@ export default function App() {
 
     // Add item to list
     const AddItemToList = () => {
-
-
-      console.log('ExpenseInputstate ', Expense);
-      console.log('AmountInputstate ', Amount);
-
       setTotalAmount((prev) => prev + Number(Amount));
-
-      console.log('TotalAmount ', TotalAmount);
   }
 
     return (
