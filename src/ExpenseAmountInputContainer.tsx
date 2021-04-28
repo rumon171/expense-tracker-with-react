@@ -5,10 +5,11 @@ interface Props {
     onChange: (value: any) => void;
 }
 
-const ExpenseAmountInputContainer: React.FC<Props> = () => {
+const ExpenseAmountInputContainer: React.FC<Props> = ({onChange}: Props) => {
+    
     return (
         <div>
-            <ExpenseInput />
+            <ExpenseInput onChange={onChange} />
             <AmountInput />
         </div>
     );
