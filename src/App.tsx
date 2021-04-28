@@ -11,14 +11,13 @@ import { useState } from 'react';
 
 export default function App() {
     const appTitle: string = "Expense Tracker";
-    let totalExpenses = 0;
 
     const [Expense, setExpense] = useState<number>(0);
     const [Amount, setAmount] = useState<number>(0);
     const [TotalAmount, setTotalAmount] = useState<number>(0);
 
     // Add item to list
-    const AddItemToList = (e: any) => {
+    const AddItemToList = () => {
 
 
       console.log('ExpenseInputstate ', Expense);
@@ -36,7 +35,7 @@ export default function App() {
           <h1>{appTitle}</h1>
           <BalanceContainer id="balance-container" className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
-          <IncomeExpensesContainer />
+          <IncomeExpensesContainer totalExpenses={TotalAmount} />
         </div>
         <ExpenseAmountInputContainer 
           onExpenseChange={setExpense} 

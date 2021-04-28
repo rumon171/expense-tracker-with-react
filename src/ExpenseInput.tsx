@@ -6,7 +6,6 @@ interface Props {
 }
 
 const ExpenseInput: React.FC<Props> = ({onChange}: Props) => {
-
     return (
       <InputItem title="Expense" onChange={onChange} id="expenseItem" type="text" placeholder="Item title" />
     );
