@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import InputItem from './InputItem';
 
-const ExpenseInput: React.FC = () => {
-    //const [state, setState] = useState<boolean>(true);
+interface Props {
+  onChange: (value: any) => void;
+}
+
+const ExpenseInput: React.FC<Props> = ({onChange}: Props) => {
 
     return (
-      <InputItem title="Expense" id="expenseItem" type="text" placeholder="Enter item" />
+      <InputItem title="Expense" onChange={onChange} id="expenseItem" type="text" placeholder="Enter item" />
     );
   }
 

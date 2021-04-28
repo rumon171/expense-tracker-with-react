@@ -2,15 +2,16 @@ import ExpenseInput from './ExpenseInput';
 import AmountInput from './AmountInput';
 
 interface Props {
-    onChange: (value: any) => void;
+    onExpenseChange: (value: any) => void;
+    onAmountChange: (value: any) => void;
 }
 
-const ExpenseAmountInputContainer: React.FC<Props> = ({onChange}: Props) => {
+const ExpenseAmountInputContainer: React.FC<Props> = ({onExpenseChange, onAmountChange}: Props) => {
     
     return (
         <div>
-            <ExpenseInput onChange={onChange} />
-            <AmountInput />
+            <ExpenseInput onChange={onExpenseChange} />
+            <AmountInput onChange={onAmountChange}  />
         </div>
     );
 };

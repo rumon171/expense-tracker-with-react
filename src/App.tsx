@@ -13,12 +13,12 @@ export default function App() {
     const appTitle: string = "Expense Tracker";
 
     const [Expense, setExpense] = useState<number>(0);
-    //const [Amount, setAmount] = useState<number>(0);
+    const [Amount, setAmount] = useState<number>(0);
 
     // Add item to list
     const addItemToList = (e: any) => {
       console.log('ExpenseInputstate ', Expense);
-      //console.log('AmountInputstate ', Amount);
+      console.log('AmountInputstate ', Amount);
   }
 
     return (
@@ -31,7 +31,8 @@ export default function App() {
           <IncomeExpensesContainer />
         </div>
         <ExpenseAmountInputContainer 
-          onChange={setExpense} 
+          onExpenseChange={setExpense} 
+          onAmountChange={setAmount} 
         />
         <AddButton content="Add expense" onClick={addItemToList} />
         <div id="list"></div>
