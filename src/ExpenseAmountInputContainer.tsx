@@ -1,6 +1,4 @@
-import ExpenseInput from './ExpenseInput';
-import AmountInput from './AmountInput';
-
+import InputItem from './InputItem';
 interface Props {
     onExpenseChange: (value: any) => void;
     onAmountChange: (value: any) => void;
@@ -10,8 +8,18 @@ const ExpenseAmountInputContainer: React.FC<Props> = ({onExpenseChange, onAmount
     
     return (
         <div>
-            <ExpenseInput onChange={onExpenseChange} />
-            <AmountInput onChange={onAmountChange}  />
+            <InputItem 
+                title="Expense" 
+                onChange={onExpenseChange} 
+                type="text" 
+                placeholder="Item title" 
+            />
+            <InputItem 
+                title="Amount" 
+                onChange={onAmountChange}  
+                type="number" 
+                placeholder="Expense cost" 
+            />
         </div>
     );
 };

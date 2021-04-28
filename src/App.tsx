@@ -29,7 +29,7 @@ export default function App() {
 
     return (
       <div className="App">
-        <ErrorMessage id="error-message" className="error-message"/>
+        <ErrorMessage className="error-message"/>
         <div>
           <h1>{appTitle}</h1>
           <BalanceContainer totalBalance={TotalBalance} className="balance-container"/>

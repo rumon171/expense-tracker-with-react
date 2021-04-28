@@ -3,7 +3,7 @@ import InputItem from './InputItem';
 import Grid from '@material-ui/core/Grid';
 
 interface Props {
-    onIncomeInput: (value: any) => void 
+    onIncomeInput: (value: any) => void; 
     totalExpenses: number;
 }
 
@@ -14,7 +14,6 @@ const IncomeExpensesContainer: React.FC<Props> = ({onIncomeInput, totalExpenses}
             <InputItem 
                 onChange={onIncomeInput}
                 title="Income" 
-                id="income" 
                 type="text" 
                 placeholder="Your income" />
         </Grid>

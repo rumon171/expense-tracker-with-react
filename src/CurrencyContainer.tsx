@@ -1,8 +1,12 @@
 import React from "react";
 
-export default function CurrencyContainer(props: any) {
+interface Props {
+    className: string;
+}
+
+const CurrencyContainer: React.FC<Props> = ({className}: Props) => {
 return (
-           <div className={props.className}>
+           <div className={className}>
                 <h3>Currency</h3>
                 <select id="currency" defaultValue={'EUR'}>
                     <option value="AED">AED</option>
@@ -61,3 +65,5 @@ return (
             </div>
         );
     }
+
+export default CurrencyContainer;
