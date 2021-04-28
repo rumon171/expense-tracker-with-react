@@ -30,7 +30,10 @@ export default function App() {
           <h1>{appTitle}</h1>
           <BalanceContainer className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
-          <IncomeExpensesContainer totalExpenses={TotalExpensesAmount} />
+          <IncomeExpensesContainer 
+            onIncomeInput={setIncome} 
+            totalExpenses={TotalExpensesAmount} 
+          />
         </div>
         <ExpenseAmountInputContainer 
           onExpenseChange={setExpense} 
