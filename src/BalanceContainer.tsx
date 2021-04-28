@@ -1,13 +1,14 @@
 import React from "react";
 interface Props {
+    totalBalance: number;
     className: string;
   }
 
-  const BalanceContainer: React.FC<Props> = ({className}: Props) =>{
+  const BalanceContainer: React.FC<Props> = ({totalBalance, className}: Props) =>{
     return (
         <h2 className={className}>
             Total Balance:
-            <span>30</span>
+            <span>{totalBalance}</span>
         </h2>
     );
   }

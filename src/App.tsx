@@ -32,7 +32,7 @@ export default function App() {
         <ErrorMessage id="error-message" className="error-message"/>
         <div>
           <h1>{appTitle}</h1>
-          <BalanceContainer className="balance-container"/>
+          <BalanceContainer totalBalance={TotalBalance} className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
           <IncomeExpensesContainer 
             onIncomeInput={setIncome} 
