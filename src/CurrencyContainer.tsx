@@ -2,13 +2,15 @@ import React from "react";
 
 interface Props {
     className: string;
+    onChange: (value: any) => void;
 }
 
-const CurrencyContainer: React.FC<Props> = ({className}: Props) => {
+const CurrencyContainer: React.FC<Props> = ({className, onChange}: Props) => {
 return (
            <div className={className}>
                 <h3>Currency</h3>
-                <select defaultValue={'EUR'}>
+                <select defaultValue={'EUR'} onChange={
+                ({ target: { value } }) => onChange(value)} >
                     <option value="AED">AED</option>
                     <option value="ARS">ARS</option>
                     <option value="AUD">AUD</option>

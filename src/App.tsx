@@ -22,6 +22,9 @@ export default function App() {
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
     const [Income, setIncome] = useState<number>(0);
     const [TotalBalance, setTotalBalance] = useState<number>(0);
+    const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
+
+console.log('SelectedCurrency', SelectedCurrency);
 
     const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
@@ -72,7 +75,7 @@ export default function App() {
         <div>
           <h1>{appTitle}</h1>
           <BalanceContainer totalBalance={TotalBalance} className="balance-container"/>
-          <CurrencyContainer className="currency-container"/>
+          <CurrencyContainer className="currency-container" onChange={setSelectedCurrency} />
           <IncomeExpensesContainer 
             onIncomeInput={UpdateIncome} 
             totalExpenses={TotalExpensesAmount} 
