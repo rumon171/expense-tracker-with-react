@@ -10,9 +10,6 @@ import DynamicList from './DynamicList';
 import AddButton from './AddButton';
 import { currencySymbols } from './CurrenciesSymbolsList';
 
-
-
-
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
@@ -24,12 +21,10 @@ export default function App() {
     const [TotalBalance, setTotalBalance] = useState<number>(0);
     const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
 
-console.log('SelectedCurrency', SelectedCurrency);
-
+    const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
+  
     const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
-
-      console.log('TotalExpensesAmount', TotalExpensesAmount);
     }
 
     const CountTotalBalance = () => {
@@ -66,26 +61,37 @@ console.log('SelectedCurrency', SelectedCurrency);
       //setAmount((prev) => prev = 0);
     }
 
-    // DELETE ITEM PART IS MISSING
+    // function - DELETE ITEM PART IS MISSING
 
-    // SHOW ERROR WARNING WHEN INPUTS ARE MISSING
+    // function - SHOW ERROR WARNING WHEN INPUTS ARE MISSING
     return (
       <div className="App">
         <ErrorMessage className="error-message"/>
         <div>
           <h1>{appTitle}</h1>
-          <BalanceContainer totalBalance={TotalBalance} className="balance-container"/>
-          <CurrencyContainer className="currency-container" onChange={setSelectedCurrency} />
+          <BalanceContainer 
+            totalBalance={TotalBalance} 
+            className="balance-container" 
+            currencySymbol={selectedCurrencySymbol} 
+          />
+          <CurrencyContainer 
+            className="currency-container" 
+            onChange={setSelectedCurrency} 
+          />
           <IncomeExpensesContainer 
             onIncomeInput={UpdateIncome} 
             totalExpenses={TotalExpensesAmount} 
+            currencySymbol={selectedCurrencySymbol}
           />
         </div>
         <ExpenseAmountInputContainer 
           onExpenseChange={setExpense} 
           onAmountChange={setAmount} 
         />
-        <AddButton content="Add expense" onClick={AddItemToList} />
+        <AddButton 
+          content="Add expense" 
+          onClick={AddItemToList} 
+        />
       </div>
     );
     //<DynamicList listItems={ExpenseAndAmountList} />

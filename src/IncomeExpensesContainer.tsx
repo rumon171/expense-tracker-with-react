@@ -5,9 +5,10 @@ import Grid from '@material-ui/core/Grid';
 interface Props {
     onIncomeInput: (value: any) => void; 
     totalExpenses: number;
+    currencySymbol: string;
 }
 
-const IncomeExpensesContainer: React.FC<Props> = ({onIncomeInput, totalExpenses}: Props) => {
+const IncomeExpensesContainer: React.FC<Props> = ({onIncomeInput, totalExpenses, currencySymbol}: Props) => {
     return (
     <Grid container spacing={1} className="income-expenses-container">
         <Grid item xs={6}>
@@ -19,7 +20,7 @@ const IncomeExpensesContainer: React.FC<Props> = ({onIncomeInput, totalExpenses}
         </Grid>
         <Grid item xs={6} className="centered">
             <h3>Total Expenses</h3>
-            <div>{totalExpenses}</div>
+            <div>{totalExpenses}{currencySymbol}</div>
         </Grid>
     </Grid>
     );
