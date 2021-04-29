@@ -25,17 +25,18 @@ export default function App() {
     }
 
     const CountTotalBalance = () => {
-      // THIS ONE HAS TO BE SYNCHRONOUS
-      setTotalBalance(
-        () => Income - TotalExpensesAmount
-      );
-
-      console.log('TotalBalance', TotalBalance);
+      // setTotalBalance HAS TO BE SYNCHRONOUS
+      setTotalBalance(() => Income - TotalExpensesAmount);
     }
+
+    const UpdateIncome = (enteredValue: any) => {
+      // setIncome HAS TO BE SYNCHRONOUS
+      setIncome(() => enteredValue);
+      CountTotalBalance();
+    }  
 
     const UpdateTotalBalance = () => {
       CountTotalBalance();
-    // show total balance CHANGING INCOME part is missing
     }
 
     const AddItemToList = () => {
@@ -58,7 +59,7 @@ export default function App() {
           <BalanceContainer totalBalance={TotalBalance} className="balance-container"/>
           <CurrencyContainer className="currency-container"/>
           <IncomeExpensesContainer 
-            onIncomeInput={setIncome} 
+            onIncomeInput={UpdateIncome} 
             totalExpenses={TotalExpensesAmount} 
           />
         </div>
