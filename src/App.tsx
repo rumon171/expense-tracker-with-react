@@ -51,6 +51,8 @@ export default function App() {
     }
 
     // DELETE ITEM PART IS MISSING
+
+    // SHOW ERROR WARNING WHEN INPUTS ARE MISSING
     return (
       <div className="App">
         <ErrorMessage className="error-message"/>
@@ -68,7 +70,7 @@ export default function App() {
           onAmountChange={setAmount} 
         />
         <AddButton content="Add expense" onClick={AddItemToList} />
-        <div id="list">aa</div>
+        <div>List here</div>
       </div>
     );
 }

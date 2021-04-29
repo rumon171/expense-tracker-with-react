@@ -8,7 +8,7 @@ const CurrencyContainer: React.FC<Props> = ({className}: Props) => {
 return (
            <div className={className}>
                 <h3>Currency</h3>
-                <select id="currency" defaultValue={'EUR'}>
+                <select defaultValue={'EUR'}>
                     <option value="AED">AED</option>
                     <option value="ARS">ARS</option>
                     <option value="AUD">AUD</option>

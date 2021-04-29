@@ -9,7 +9,6 @@ interface Props {
 const AddButton: React.FC<Props> = ({content, onClick}: Props) => {
     return (
         <Button 
-            id="addExpenseButton" 
             className="full-width" 
             onClick={onClick} 
             variant="contained" 
