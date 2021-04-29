@@ -12,7 +12,7 @@ import React from "react";
     listItems: Array<ListItem>;
   }
 
-  const BalanceContainer: React.FC<ListItemsArray> = ({listItems}: ListItemsArray) =>{
+  const DynamicList: React.FC<ListItemsArray> = ({listItems}: ListItemsArray) =>{
     return (
         <>
             <ul>
@@ -22,4 +22,4 @@ import React from "react";
       );
   }
   
-export default BalanceContainer;
+export default DynamicList;

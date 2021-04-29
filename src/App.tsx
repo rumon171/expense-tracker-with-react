@@ -80,7 +80,7 @@ export default function App() {
           onAmountChange={setAmount} 
         />
         <AddButton content="Add expense" onClick={AddItemToList} />
-        <DynamicList listItems={ExpenseAndAmountList} />
       </div>
     );
+    //<DynamicList listItems={ExpenseAndAmountList} />
 }
