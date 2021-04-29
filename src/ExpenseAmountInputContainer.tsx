@@ -13,12 +13,15 @@ const ExpenseAmountInputContainer: React.FC<Props> = ({onExpenseChange, onAmount
                 onChange={onExpenseChange} 
                 type="text" 
                 placeholder="Item title" 
+             
+                
             />
             <InputItem 
                 title="Amount" 
                 onChange={onAmountChange}  
                 type="number" 
                 placeholder="Expense cost" 
+                
             />
         </div>
     );

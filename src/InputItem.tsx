@@ -6,6 +6,7 @@ interface Props {
     onChange: (value: any) => void;
     type: string;
     placeholder: string;
+    
 
 }
 
@@ -18,7 +19,9 @@ const InputItem: React.FC<Props> = ({title, onChange, type, placeholder}: Props)
                 type={type} 
                 label={placeholder} 
                 className="full-width" 
-                variant="outlined" />
+                variant="outlined" 
+                required 
+                />
         </div>
     );
   }

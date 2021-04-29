@@ -20,6 +20,8 @@ export default function App() {
 
     const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
+
+      console.log('TotalExpensesAmount', TotalExpensesAmount);
     }
 
     const CountTotalBalance = () => {
@@ -27,6 +29,8 @@ export default function App() {
       setTotalBalance(
         () => Income - TotalExpensesAmount
       );
+
+      console.log('TotalBalance', TotalBalance);
     }
 
     const UpdateTotalBalance = () => {
@@ -38,6 +42,11 @@ export default function App() {
       UpdateTotalExpensesAmount();
       UpdateTotalBalance();
       // add item to list part is missing
+    }
+
+    const ResetExpenseAndAmountValues = () => {
+      //setAmount((prev) => prev = 0);
+      //console.log('Amount value after setting to 0 = ', Amount);
     }
 
     // DELETE ITEM PART IS MISSING
