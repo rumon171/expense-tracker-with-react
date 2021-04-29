@@ -12,6 +12,7 @@ import { useState } from 'react';
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
+    const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<Array<object>>([]);
     const [Expense, setExpense] = useState<number>(0);
     const [Amount, setAmount] = useState<number>(0);
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
@@ -39,19 +40,29 @@ export default function App() {
       CountTotalBalance();
     }
 
+    const UpdateExpenseAndAmountList = (itemToAdd: object) => {
+      let currentList = ExpenseAndAmountList;
+      currentList.push(itemToAdd);
+      setExpenseAndAmountList(() => currentList);
+
+      console.log("ExpenseAndAmountList", ExpenseAndAmountList);
+    }
+
     const AddItemToList = () => {
       UpdateTotalExpensesAmount();
       UpdateTotalBalance();
+      UpdateExpenseAndAmountList({Expense, Amount});
       RenderListItem();
-    }
-
-    const RenderListItem = () => {
-      // add item to list part is missing
+      ResetExpenseAndAmountValues();
     }
 
     const ResetExpenseAndAmountValues = () => {
       //setAmount((prev) => prev = 0);
       //console.log('Amount value after setting to 0 = ', Amount);
+    }
+
+    const RenderListItem = () => {
+      // add item to list part is missing
     }
 
     // DELETE ITEM PART IS MISSING
