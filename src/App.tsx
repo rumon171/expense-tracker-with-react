@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import ErrorMessage from './ErrorMessage';
 import BalanceContainer from './BalanceContainer';
@@ -7,7 +8,9 @@ import IncomeExpensesContainer from './IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './ExpenseAmountInputContainer';
 import DynamicList from './DynamicList';
 import AddButton from './AddButton';
-import { useState } from 'react';
+import { currencySymbols } from './CurrenciesSymbolsList';
+
+
 
 
 export default function App() {
