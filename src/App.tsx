@@ -18,27 +18,29 @@ export default function App() {
     const [Income, setIncome] = useState<number>(0);
     const [TotalBalance, setTotalBalance] = useState<number>(0);
 
-    // Add item to list
-    const AddItemToList = () => {
-      ShowItemToList();
-
-      // add item to list part is missing
-    }
-
-    const ShowItemToList = () => {
+    const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
     }
 
-    const showTotalBalance = () => {
-      CountTotalBalance();
-
-    // show total balance part is missing
-    }
-
     const CountTotalBalance = () => {
-      setTotalBalance(() => Income - TotalExpensesAmount);
+      // THIS ONE HAS TO BE SYNCHRONOUS
+      setTotalBalance(
+        () => Income - TotalExpensesAmount
+      );
     }
 
+    const UpdateTotalBalance = () => {
+      CountTotalBalance();
+    // show total balance CHANGING INCOME part is missing
+    }
+
+    const AddItemToList = () => {
+      UpdateTotalExpensesAmount();
+      UpdateTotalBalance();
+      // add item to list part is missing
+    }
+
+    // DELETE ITEM PART IS MISSING
     return (
       <div className="App">
         <ErrorMessage className="error-message"/>
