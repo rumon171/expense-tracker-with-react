@@ -5,6 +5,7 @@ import BalanceContainer from './BalanceContainer';
 import CurrencyContainer from './CurrencyContainer';
 import IncomeExpensesContainer from './IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './ExpenseAmountInputContainer';
+import DynamicList from './DynamicList';
 import AddButton from './AddButton';
 import { useState } from 'react';
 
@@ -52,17 +53,11 @@ export default function App() {
       UpdateTotalExpensesAmount();
       UpdateTotalBalance();
       UpdateExpenseAndAmountList({Expense, Amount});
-      RenderListItem();
       ResetExpenseAndAmountValues();
     }
 
     const ResetExpenseAndAmountValues = () => {
       //setAmount((prev) => prev = 0);
-      //console.log('Amount value after setting to 0 = ', Amount);
-    }
-
-    const RenderListItem = () => {
-      // add item to list part is missing
     }
 
     // DELETE ITEM PART IS MISSING
@@ -85,7 +80,7 @@ export default function App() {
           onAmountChange={setAmount} 
         />
         <AddButton content="Add expense" onClick={AddItemToList} />
-        <div>List here</div>
+        <DynamicList listItems={ExpenseAndAmountList} />
       </div>
     );
 }
