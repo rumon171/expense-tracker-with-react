@@ -14,18 +14,30 @@ export default function App() {
 
     const [Expense, setExpense] = useState<number>(0);
     const [Amount, setAmount] = useState<number>(0);
-    const [TotalExpensesAmount, setTotalAmount] = useState<number>(0);
+    const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
     const [Income, setIncome] = useState<number>(0);
     const [TotalBalance, setTotalBalance] = useState<number>(0);
 
     // Add item to list
     const AddItemToList = () => {
-      setTotalAmount((prev) => prev + Number(Amount));
+      ShowItemToList();
+
+      // add item to list part is missing
+    }
+
+    const ShowItemToList = () => {
+      setTotalExpensesAmount((prev) => prev + Number(Amount));
+    }
+
+    const showTotalBalance = () => {
+      CountTotalBalance();
+
+    // show total balance part is missing
     }
 
     const CountTotalBalance = () => {
       setTotalBalance(() => Income - TotalExpensesAmount);
-    }   
+    }
 
     return (
       <div className="App">
