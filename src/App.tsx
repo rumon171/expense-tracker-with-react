@@ -46,8 +46,6 @@ export default function App() {
       let currentList = ExpenseAndAmountList;
       currentList.push(itemToAdd);
       setExpenseAndAmountList(() => currentList);
-
-      console.log("ExpenseAndAmountList", ExpenseAndAmountList);
     }
 
     const AddItemToList = () => {
