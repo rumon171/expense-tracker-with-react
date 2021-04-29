@@ -42,6 +42,10 @@ export default function App() {
     const AddItemToList = () => {
       UpdateTotalExpensesAmount();
       UpdateTotalBalance();
+      RenderListItem();
+    }
+
+    const RenderListItem = () => {
       // add item to list part is missing
     }
 
