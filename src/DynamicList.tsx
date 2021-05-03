@@ -1,4 +1,5 @@
 import React from "react";
+import { List, ListItem, ListItemText } from "@material-ui/core";
   export interface ListItem {
     expense: string;
     amount: number;
@@ -11,9 +12,13 @@ import React from "react";
   const DynamicList: React.FC<ListItemsArray> = ({listItems}: ListItemsArray) =>{
     return (
         <>
-            <ul>
-                {listItems.map(item => (<li key={Math.random()}>{item.amount}</li>))} 
-            </ul>
+            <List>
+                {listItems.map(item => (
+                    <ListItem key={Math.random()} className="list-item">
+                        <ListItemText primary={item.amount} />
+                    </ListItem>
+                ))} 
+            </List>
         </>
       );
   }
