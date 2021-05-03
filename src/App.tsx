@@ -28,15 +28,19 @@ export default function App() {
     }
 
     const CountTotalBalance = () => {
-      // setTotalBalance HAS TO BE SYNCHRONOUS
       setTotalBalance(() => Income - TotalExpensesAmount);
+      console.log('TotalBalance ', TotalBalance);
     }
 
     const UpdateIncome = (enteredValue: any) => {
-      // setIncome HAS TO BE SYNCHRONOUS
+      console.log('enteredValue ', enteredValue);
       setIncome(() => enteredValue);
+
+      // setIncome HAS TO BE SYNCHRONOUS
+
+      console.log('Income ', Income);
       CountTotalBalance();
-    }  
+    }
 
     const UpdateTotalBalance = () => {
       CountTotalBalance();
