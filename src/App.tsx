@@ -50,6 +50,7 @@ export default function App() {
       let currentList = ExpenseAndAmountList;
       currentList.push(itemToAdd);
       setExpenseAndAmountList(() => currentList);
+      //console.log('ExpenseAndAmountList ', ExpenseAndAmountList);
     }
 
     const AddItemToList = () => {
@@ -96,5 +97,5 @@ export default function App() {
         />
       </div>
     );
-    //<DynamicList listItems={ExpenseAndAmountList} />
+   //<DynamicList listItems={ExpenseAndAmountList} />
 }
