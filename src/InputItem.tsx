@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 
 interface Props {
     title: string;
-    onChange: (value: any) => void;
+    onChange: (value: string) => void;
     type: string;
     placeholder: string;
     

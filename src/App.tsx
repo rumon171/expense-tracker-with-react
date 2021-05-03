@@ -32,7 +32,7 @@ export default function App() {
       //console.log('TotalBalance ', TotalBalance);
     }
 
-    const UpdateIncome = (enteredValue: any) => {
+    const UpdateIncome = (enteredValue: number) => {
      // console.log('enteredValue ', enteredValue);
       setIncome(() => enteredValue);
 
@@ -50,7 +50,7 @@ export default function App() {
       let currentList = ExpenseAndAmountList;
       currentList.push(itemToAdd);
       setExpenseAndAmountList(() => currentList);
-      //console.log('ExpenseAndAmountList ', ExpenseAndAmountList);
+      console.log('ExpenseAndAmountList ', ExpenseAndAmountList);
     }
 
     const AddItemToList = () => {
@@ -95,7 +95,7 @@ export default function App() {
           content="Add expense" 
           onClick={AddItemToList} 
         />
+        <DynamicList listItems={ExpenseAndAmountList} />
       </div>
     );
-   <DynamicList listItems={ExpenseAndAmountList} />
 }

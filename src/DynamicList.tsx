@@ -1,8 +1,4 @@
 import React from "react";
-//   interface Props {
-//     listItems: Array<object>;
-//    }
-
   export interface ListItem {
     expense: string;
     amount: number;
@@ -16,7 +12,7 @@ import React from "react";
     return (
         <>
             <ul>
-                {listItems.map(item => (<li>{item.amount}</li>))} 
+                {listItems.map(item => (<li key={Math.random()}>{item.amount}</li>))} 
             </ul>
         </>
       );

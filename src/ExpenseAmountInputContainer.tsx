@@ -1,3 +1,4 @@
+import React from 'react';
 import InputItem from './InputItem';
 interface Props {
     onExpenseChange: (value: any) => void;
