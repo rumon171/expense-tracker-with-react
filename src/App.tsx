@@ -50,7 +50,6 @@ export default function App() {
       let currentList = ExpenseAndAmountList;
       currentList.push(itemToAdd);
       setExpenseAndAmountList(() => currentList);
-      console.log('ExpenseAndAmountList ', ExpenseAndAmountList);
     }
 
     const AddItemToList = () => {
@@ -65,9 +64,14 @@ export default function App() {
       // CLEAR INPUT FIELDS HERE
     }
 
-    // function - DELETE ITEM PART IS MISSING
+    const DeleteListItem = (e: any) => {
+      //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
+      //let clickedListitem = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+      //clickedListitem.remove();
+    }
 
     // function - SHOW ERROR WARNING WHEN INPUTS ARE MISSING
+ 
     return (
       <div className="App">
         <ErrorMessage className="error-message"/>
@@ -99,6 +103,7 @@ export default function App() {
         <DynamicList 
           listItems={ExpenseAndAmountList} 
           currencySymbol={selectedCurrencySymbol} 
+          onClick={DeleteListItem} 
           />
       </div>
     );

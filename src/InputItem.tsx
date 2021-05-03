@@ -14,8 +14,8 @@ const InputItem: React.FC<Props> = ({title, onChange, type, placeholder}: Props)
     return (
         <div className="inputContainer">
             <label>{title}</label>
-            <TextField onChange={
-                ({ target: { value } }) => onChange(value)} 
+            <TextField 
+                onChange={({ target: { value } }) => onChange(value)} 
                 type={type} 
                 label={placeholder} 
                 className="full-width" 
