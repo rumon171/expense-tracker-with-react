@@ -79,27 +79,8 @@ h2 {
 }
 
 .delete-btn {
+  color: #e63946;
   cursor: pointer;
-  background-color: var(--quaternary-color);
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: -6px;
-  transform: translate(-100%,-50%);
-  transition: opacity .3s ease;
-}
-
-.delete-btn:hover {
-  background-color: var(--primary-dark-color);  
-}
-
-.delete-btn i {
-  font-size: 12px;
-  padding: 5px 4px;
 }
 
 .list-item {
