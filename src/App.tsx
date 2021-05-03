@@ -6,15 +6,15 @@ import BalanceContainer from './BalanceContainer';
 import CurrencyContainer from './CurrencyContainer';
 import IncomeExpensesContainer from './IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './ExpenseAmountInputContainer';
-import DynamicList from './DynamicList';
+import DynamicList, { ListItem } from './DynamicList';
 import AddButton from './AddButton';
 import { currencySymbols } from './CurrenciesSymbolsList';
 
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
-    const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<Array<object>>([]);
-    const [Expense, setExpense] = useState<number>(0);
+    const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<Array<ListItem>>([]);
+    const [Expense, setExpense] = useState<string>('');
     const [Amount, setAmount] = useState<number>(0);
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
     const [Income, setIncome] = useState<number>(0);
@@ -29,11 +29,11 @@ export default function App() {
 
     const CountTotalBalance = () => {
       setTotalBalance(() => Income - TotalExpensesAmount);
-      console.log('TotalBalance ', TotalBalance);
+      //console.log('TotalBalance ', TotalBalance);
     }
 
     const UpdateIncome = (enteredValue: any) => {
-      console.log('enteredValue ', enteredValue);
+     // console.log('enteredValue ', enteredValue);
       setIncome(() => enteredValue);
 
       // setIncome HAS TO BE SYNCHRONOUS
@@ -46,7 +46,7 @@ export default function App() {
       CountTotalBalance();
     }
 
-    const UpdateExpenseAndAmountList = (itemToAdd: object) => {
+    const UpdateExpenseAndAmountList = (itemToAdd: ListItem) => {
       let currentList = ExpenseAndAmountList;
       currentList.push(itemToAdd);
       setExpenseAndAmountList(() => currentList);
@@ -56,7 +56,7 @@ export default function App() {
     const AddItemToList = () => {
       UpdateTotalExpensesAmount();
       UpdateTotalBalance();
-      UpdateExpenseAndAmountList({Expense, Amount});
+      UpdateExpenseAndAmountList({expense: Expense, amount: Amount});
       ResetExpenseAndAmountValues();
     }
 
@@ -97,5 +97,5 @@ export default function App() {
         />
       </div>
     );
-   //<DynamicList listItems={ExpenseAndAmountList} />
+   <DynamicList listItems={ExpenseAndAmountList} />
 }

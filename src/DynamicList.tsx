@@ -3,7 +3,7 @@ import React from "react";
 //     listItems: Array<object>;
 //    }
 
-  interface ListItem {
+  export interface ListItem {
     expense: string;
     amount: number;
   }
