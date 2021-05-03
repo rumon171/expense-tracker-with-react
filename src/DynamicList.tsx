@@ -8,15 +8,16 @@ import DeleteIcon from '@material-ui/icons/Delete';
   
   interface ListItemsArray {
     listItems: Array<ListItem>;
+    currencySymbol: string;
   }
 
-  const DynamicList: React.FC<ListItemsArray> = ({listItems}: ListItemsArray) =>{
+  const DynamicList: React.FC<ListItemsArray> = ({listItems, currencySymbol}: ListItemsArray) => {
     return (
         <>
             <List>
                 {listItems.map(item => (
                     <ListItem key={Math.random()} className="list-item">
-                        <ListItemText primary={item.amount} />
+                        <ListItemText primary={item.expense} secondary={item.amount + currencySymbol}  />
                         <ListItemSecondaryAction>
                             <IconButton edge="end" >
                                 <DeleteIcon className="delete-btn" />

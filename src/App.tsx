@@ -62,6 +62,7 @@ export default function App() {
 
     const ResetExpenseAndAmountValues = () => {
       //setAmount((prev) => prev = 0);
+      // CLEAR INPUT FIELDS HERE
     }
 
     // function - DELETE ITEM PART IS MISSING
@@ -95,7 +96,10 @@ export default function App() {
           content="Add expense" 
           onClick={AddItemToList} 
         />
-        <DynamicList listItems={ExpenseAndAmountList} />
+        <DynamicList 
+          listItems={ExpenseAndAmountList} 
+          currencySymbol={selectedCurrencySymbol} 
+          />
       </div>
     );
 }
