@@ -132,6 +132,7 @@ h2 {
 
 .full-width { 
   width: 100%;
+
 }
 
 .inputContainer {
@@ -140,4 +141,9 @@ h2 {
 
 .centered {
   text-align: center;
+}
+
+/* Overwriting Material-UI styles */
+.MuiFormControl-root {
+  margin: 10px 0 0;
 }

@@ -20,7 +20,8 @@ const InputItem: React.FC<Props> = ({title, onChange, type, placeholder}: Props)
                 label={placeholder} 
                 className="full-width" 
                 variant="outlined" 
-                required 
+                required
+                style={{margin: "10px 0 0"}}
                 />
         </div>
     );
