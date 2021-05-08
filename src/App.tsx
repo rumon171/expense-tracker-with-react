@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import ErrorMessage from './ErrorMessage';
-import BalanceContainer from './BalanceContainer';
-import CurrencyContainer from './CurrencyContainer';
-import IncomeExpensesContainer from './IncomeExpensesContainer';
-import ExpenseAmountInputContainer from './ExpenseAmountInputContainer';
-import DynamicList, { ListItem } from './DynamicList';
-import AddButton from './AddButton';
-import { currencySymbols } from './CurrenciesSymbolsList';
+import ErrorMessage from './components/ErrorMessage';
+import BalanceContainer from './components/BalanceContainer';
+import CurrencyContainer from './components/CurrencyContainer';
+import IncomeExpensesContainer from './components/IncomeExpensesContainer';
+import ExpenseAmountInputContainer from './components/ExpenseAmountInputContainer';
+import DynamicList, { ListItem } from './components/DynamicList';
+import AddButton from './components/AddButton';
+import { currencySymbols } from './components/CurrenciesSymbolsList';
 
 export default function App() {
     const appTitle: string = "Expense Tracker";
