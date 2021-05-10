@@ -6,11 +6,10 @@ interface Props {
     onChange: (value: string) => void;
     type: string;
     placeholder: string;
-    
-
+    value: string;
 }
 
-const InputItem: React.FC<Props> = ({title, onChange, type, placeholder}: Props) => {
+const InputItem: React.FC<Props> = ({title, onChange, type, placeholder, value}: Props) => {
     return (
         <div className="inputContainer">
             <label>{title}</label>
@@ -22,6 +21,7 @@ const InputItem: React.FC<Props> = ({title, onChange, type, placeholder}: Props)
                 variant="outlined" 
                 required
                 style={{margin: "10px 0 0"}}
+                value={value}
                 />
         </div>
     );

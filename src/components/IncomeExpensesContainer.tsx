@@ -26,7 +26,9 @@ const IncomeExpensesContainer: React.FC<Props> = ({
                 onChange={HandleInputChange}
                 title="Income" 
                 type="number" 
-                placeholder="Your income" />
+                placeholder="Your income" 
+                value=""
+                />
         </Grid>
         <Grid item xs={6} className="centered">
             <h3>Total Expenses</h3>

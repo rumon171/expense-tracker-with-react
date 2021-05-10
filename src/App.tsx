@@ -7,15 +7,19 @@ import CurrencyContainer from './components/CurrencyContainer';
 import IncomeExpensesContainer from './components/IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './components/ExpenseAmountInputContainer';
 import DynamicList, { ListItem } from './components/DynamicList';
-import AddButton from './components/AddButton';
 import { currencySymbols } from './components/CurrenciesSymbolsList';
 
 export default function App() {
     const appTitle: string = "Expense Tracker";
 
-    const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<Array<ListItem>>([]);
-    const [Expense, setExpense] = useState<string>('');
-    const [Amount, setAmount] = useState<number>(0);
+    const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<
+      Array<{
+        expenseTitle: string,
+        expenseAmount: number,
+        id: number
+      }>
+    >([]);
+
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
     const [Income, setIncome] = useState<number>(0);
     const [TotalBalance, setTotalBalance] = useState<number>(0);
@@ -23,14 +27,14 @@ export default function App() {
 
     const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
   
-    const UpdateTotalExpensesAmount = () => {
+    /*const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
-    }
+    }*/
 
-    const CountTotalBalance = () => {
+   /* const CountTotalBalance = () => {
       setTotalBalance(() => Income - TotalExpensesAmount);
       //console.log('TotalBalance ', TotalBalance);
-    }
+    } */
 
     const UpdateIncome = (enteredValue: number) => {
      // console.log('enteredValue ', enteredValue);
@@ -39,29 +43,7 @@ export default function App() {
       // setIncome HAS TO BE SYNCHRONOUS
 
       console.log('Income ', Income);
-      CountTotalBalance();
-    }
-
-    const UpdateTotalBalance = () => {
-      CountTotalBalance();
-    }
-
-    const UpdateExpenseAndAmountList = (itemToAdd: ListItem) => {
-      let currentList = ExpenseAndAmountList;
-      currentList.push(itemToAdd);
-      setExpenseAndAmountList(() => currentList);
-    }
-
-    const AddItemToList = () => {
-      UpdateTotalExpensesAmount();
-      UpdateTotalBalance();
-      UpdateExpenseAndAmountList({expense: Expense, amount: Amount});
-      ResetExpenseAndAmountValues();
-    }
-
-    const ResetExpenseAndAmountValues = () => {
-      //setAmount((prev) => prev = 0);
-      // CLEAR INPUT FIELDS HERE
+     // CountTotalBalance();
     }
 
     const DeleteListItem = (e: any) => {
@@ -93,18 +75,17 @@ export default function App() {
           />
         </div>
         <ExpenseAmountInputContainer 
-          onExpenseChange={setExpense} 
-          onAmountChange={setAmount} 
+          ExpenseAndAmountList={ExpenseAndAmountList}
+          setExpenseAndAmountList={setExpenseAndAmountList}
+          content="Add expense"  
         />
-        <AddButton 
-          content="Add expense" 
-          onClick={AddItemToList} 
-        />
-        <DynamicList 
-          listItems={ExpenseAndAmountList} 
-          currencySymbol={selectedCurrencySymbol} 
-          onClick={DeleteListItem} 
-          />
+
       </div>
     );
 }
+
+       /* <DynamicList 
+          listItems={ExpenseAndAmountList} 
+          currencySymbol={selectedCurrencySymbol} 
+          onClick={DeleteListItem} 
+          />*/
