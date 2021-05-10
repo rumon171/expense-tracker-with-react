@@ -17,11 +17,6 @@ interface Props {
       className, 
       currencySymbol
     }: Props) =>{
-    
-    const CountTotalBalance = () => {
-     // setTotalBalance(() => Income - TotalExpensesAmount);
-      //console.log('TotalBalance ', TotalBalance);
-    }
 
     setTotalBalance(Number(income) - totalExpenses);
 

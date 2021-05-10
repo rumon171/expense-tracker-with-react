@@ -1,14 +1,13 @@
 import React from "react";
 import { IconButton, List, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
-  export interface ListItem {
+  export interface ListItemObject {
     expenseTitle: string;
     expenseAmount: string;
     id: number
   }
-  
   interface ListItemsArray {
-    listItems: Array<ListItem>;
+    listItems: Array<ListItemObject>;
     currencySymbol: string;
     onClick: (value: any) => void;
   }

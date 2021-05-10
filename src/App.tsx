@@ -6,7 +6,7 @@ import BalanceContainer from './components/BalanceContainer';
 import CurrencyContainer from './components/CurrencyContainer';
 import IncomeExpensesContainer from './components/IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './components/ExpenseAmountInputContainer';
-import DynamicList, { ListItem } from './components/DynamicList';
+import DynamicList from './components/DynamicList';
 import { currencySymbols } from './components/CurrenciesSymbolsList';
 
 export default function App() {
