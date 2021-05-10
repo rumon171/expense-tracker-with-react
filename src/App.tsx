@@ -22,16 +22,9 @@ export default function App() {
 
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
     const [Income, setIncome] = useState<string>("");
-
     const [TotalBalance, setTotalBalance] = useState<number>(0);
-
     const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
     const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
-
-    /*const UpdateTotalExpensesAmount = () => {
-      setTotalExpensesAmount((prev) => prev + Number(Amount));
-    }*/
-console.log(typeof(Income));
 
     const DeleteListItem = (e: any) => {
       //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
@@ -71,13 +64,12 @@ console.log(typeof(Income));
           setTotalExpensesAmount={setTotalExpensesAmount}
           content="Add expense"  
         />
-
+        <DynamicList 
+          listItems={ExpenseAndAmountList} 
+          currencySymbol={selectedCurrencySymbol} 
+          onClick={DeleteListItem} 
+        />
       </div>
     );
 }
 
-       /* <DynamicList 
-          listItems={ExpenseAndAmountList} 
-          currencySymbol={selectedCurrencySymbol} 
-          onClick={DeleteListItem} 
-          />*/

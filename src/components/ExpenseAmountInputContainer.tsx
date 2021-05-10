@@ -27,15 +27,6 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
     const [Expense, setExpense] = useState<string>('');
     const [Amount, setAmount] = useState<string>('');
 
-   /* const UpdateTotalBalance = () => {
-        CountTotalBalance();
-      }
-  
-      const UpdateExpenseAndAmountList = (itemToAdd: ListItem) => {
-        let currentList = ExpenseAndAmountList;
-        currentList.push(itemToAdd);
-      }
-  */
       const AddItemToList = () => {
         
         setExpenseAndAmountList(
@@ -48,8 +39,7 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
                 }
             ]
         );
-            console.log('ExpenseAndAmountList ', expenseAndAmountList);
-            
+
         setExpense("");
         setAmount("");
 
