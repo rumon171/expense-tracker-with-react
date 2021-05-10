@@ -5,19 +5,19 @@ import AddButton from './AddButton';
 
 interface ExpenseAndAmounObject {
     expenseTitle: string,
-    expenseAmount: number,
+    expenseAmount: string,
     id: number  
 }
 interface Props {
-    ExpenseAndAmountList: Array<ExpenseAndAmounObject>;
-    setExpenseAndAmountList: (value: any) => void;
+    expenseAndAmountList: Array<ExpenseAndAmounObject>;
+    setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
     setTotalExpensesAmount: (value: any) => void;
     content: string;
 }
 
 const ExpenseAmountInputContainer: React.FC<Props> = (
         {
-            ExpenseAndAmountList, 
+            expenseAndAmountList, 
             setExpenseAndAmountList,
             setTotalExpensesAmount, 
             content
@@ -34,18 +34,13 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
       const UpdateExpenseAndAmountList = (itemToAdd: ListItem) => {
         let currentList = ExpenseAndAmountList;
         currentList.push(itemToAdd);
-        setExpenseAndAmountList(() => currentList);
       }
   */
       const AddItemToList = () => {
-        //UpdateTotalExpensesAmount();
-        //UpdateTotalBalance();
-        //UpdateExpenseAndAmountList({expense: Expense, amount: Amount});
-        //ResetExpenseAndAmountValues();
         
         setExpenseAndAmountList(
             [
-                ...ExpenseAndAmountList, 
+                ...expenseAndAmountList, 
                 { 
                     expenseTitle: Expense,
                     expenseAmount: Amount,
@@ -53,7 +48,7 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
                 }
             ]
         );
-            console.log('ExpenseAndAmountList ', ExpenseAndAmountList);
+            console.log('ExpenseAndAmountList ', expenseAndAmountList);
             
         setExpense("");
         setAmount("");

@@ -15,7 +15,7 @@ export default function App() {
     const [ExpenseAndAmountList, setExpenseAndAmountList] = useState<
       Array<{
         expenseTitle: string,
-        expenseAmount: number,
+        expenseAmount: string,
         id: number
       }>
     >([]);
@@ -31,11 +31,7 @@ export default function App() {
     /*const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
     }*/
-
-   /* const CountTotalBalance = () => {
-      setTotalBalance(() => Income - TotalExpensesAmount);
-      //console.log('TotalBalance ', TotalBalance);
-    } */
+console.log(typeof(Income));
 
     const DeleteListItem = (e: any) => {
       //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
@@ -52,6 +48,9 @@ export default function App() {
           <h1>{appTitle}</h1>
           <BalanceContainer 
             totalBalance={TotalBalance} 
+            setTotalBalance={setTotalBalance}
+            income={Income}
+            totalExpenses={TotalExpensesAmount} 
             className="balance-container" 
             currencySymbol={selectedCurrencySymbol} 
           />
@@ -60,14 +59,14 @@ export default function App() {
             onChange={setSelectedCurrency} 
           />
           <IncomeExpensesContainer 
-            Income={Income}
+            income={Income}
             setIncome={setIncome} 
-            TotalExpenses={TotalExpensesAmount} 
+            totalExpenses={TotalExpensesAmount} 
             currencySymbol={selectedCurrencySymbol}
           />
         </div>
         <ExpenseAmountInputContainer 
-          ExpenseAndAmountList={ExpenseAndAmountList}
+          expenseAndAmountList={ExpenseAndAmountList}
           setExpenseAndAmountList={setExpenseAndAmountList}
           setTotalExpensesAmount={setTotalExpensesAmount}
           content="Add expense"  

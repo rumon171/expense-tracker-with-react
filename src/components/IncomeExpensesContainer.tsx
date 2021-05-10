@@ -3,16 +3,16 @@ import InputItem from './InputItem';
 import Grid from '@material-ui/core/Grid';
 
 interface Props {
-    Income: string;
+    income: string;
     setIncome: (value: string) => void; 
-    TotalExpenses: number;
+    totalExpenses: number;
     currencySymbol: string;
 }
 
 const IncomeExpensesContainer: React.FC<Props> = ({
-        Income,
+        income,
         setIncome, 
-        TotalExpenses, 
+        totalExpenses, 
         currencySymbol,
     }: Props) => {
 
@@ -24,12 +24,12 @@ const IncomeExpensesContainer: React.FC<Props> = ({
                         title="Income" 
                         type="number" 
                         placeholder="Your income" 
-                        value={Income}
+                        value={income}
                         />
                 </Grid>
                 <Grid item xs={6} className="centered">
                     <h3>Total Expenses</h3>
-                    <div>{TotalExpenses}{currencySymbol}</div>
+                    <div>{totalExpenses}{currencySymbol}</div>
                 </Grid>
             </Grid>
         );
