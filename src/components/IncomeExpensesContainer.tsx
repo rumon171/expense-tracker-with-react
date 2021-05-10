@@ -8,8 +8,6 @@ interface Props {
     currencySymbol: string;
 }
 
-
-
 const IncomeExpensesContainer: React.FC<Props> = ({
         onIncomeInput, 
         totalExpenses, 

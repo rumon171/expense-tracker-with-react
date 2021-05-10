@@ -21,6 +21,7 @@ export default function App() {
     >([]);
 
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
+    
     const [Income, setIncome] = useState<number>(0);
     const [TotalBalance, setTotalBalance] = useState<number>(0);
     const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
@@ -77,6 +78,7 @@ export default function App() {
         <ExpenseAmountInputContainer 
           ExpenseAndAmountList={ExpenseAndAmountList}
           setExpenseAndAmountList={setExpenseAndAmountList}
+          setTotalExpensesAmount={setTotalExpensesAmount}
           content="Add expense"  
         />
 

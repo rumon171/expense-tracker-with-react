@@ -9,23 +9,17 @@ interface ExpenseAndAmounObject {
     id: number  
 }
 interface Props {
-    //Expense: string;
-   // setExpense: (value: string) => void;
-   // Amount: string;
-   // setAmount: (value: string) => void;
     ExpenseAndAmountList: Array<ExpenseAndAmounObject>;
     setExpenseAndAmountList: (value: any) => void;
+    setTotalExpensesAmount: (value: any) => void;
     content: string;
 }
 
 const ExpenseAmountInputContainer: React.FC<Props> = (
         {
-         //   Expense,
-           // setExpense,
-          //  Amount,
-          //  setAmount,
             ExpenseAndAmountList, 
-            setExpenseAndAmountList, 
+            setExpenseAndAmountList,
+            setTotalExpensesAmount, 
             content
         }: Props
     ) => {
@@ -63,6 +57,8 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
             
         setExpense("");
         setAmount("");
+
+        setTotalExpensesAmount((prev: number) => prev + Number(Amount));
       }
 
     return (
