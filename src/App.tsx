@@ -21,13 +21,13 @@ export default function App() {
     >([]);
 
     const [TotalExpensesAmount, setTotalExpensesAmount] = useState<number>(0);
-    
-    const [Income, setIncome] = useState<number>(0);
-    const [TotalBalance, setTotalBalance] = useState<number>(0);
-    const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
+    const [Income, setIncome] = useState<string>("");
 
+    const [TotalBalance, setTotalBalance] = useState<number>(0);
+
+    const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
     const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
-  
+
     /*const UpdateTotalExpensesAmount = () => {
       setTotalExpensesAmount((prev) => prev + Number(Amount));
     }*/
@@ -36,16 +36,6 @@ export default function App() {
       setTotalBalance(() => Income - TotalExpensesAmount);
       //console.log('TotalBalance ', TotalBalance);
     } */
-
-    const UpdateIncome = (enteredValue: number) => {
-     // console.log('enteredValue ', enteredValue);
-      setIncome(() => enteredValue);
-
-      // setIncome HAS TO BE SYNCHRONOUS
-
-      console.log('Income ', Income);
-     // CountTotalBalance();
-    }
 
     const DeleteListItem = (e: any) => {
       //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
@@ -70,8 +60,9 @@ export default function App() {
             onChange={setSelectedCurrency} 
           />
           <IncomeExpensesContainer 
-            onIncomeInput={UpdateIncome} 
-            totalExpenses={TotalExpensesAmount} 
+            Income={Income}
+            setIncome={setIncome} 
+            TotalExpenses={TotalExpensesAmount} 
             currencySymbol={selectedCurrencySymbol}
           />
         </div>
