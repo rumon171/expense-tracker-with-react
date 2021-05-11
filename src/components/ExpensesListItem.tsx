@@ -11,7 +11,7 @@ interface Props {
     expenseTitle: string;
     expenseAmount: string;
     currencySymbol: string;
-    item: object;
+    item: ExpenseAndAmounObject;
     items: Array<ExpenseAndAmounObject>;
     setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
   }
@@ -27,9 +27,8 @@ const ExpensesListItem: React.FC<Props> = (
     }: Props) => {
 
     const DeleteListItem = () => {
-
-       // setExpenseAndAmountList(items.filter(el => el.id !== item.id));
-        console.log("item ", item);
+        setExpenseAndAmountList(items.filter(el => el.id !== item.id));
+        console.log("items ", items);
     }
 
     return (
