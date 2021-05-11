@@ -60,8 +60,8 @@ export default function App() {
         />
         <DynamicList 
           listItems={ExpenseAndAmountList} 
-          currencySymbol={selectedCurrencySymbol} 
-          //onClick={DeleteListItem} 
+          currencySymbol={selectedCurrencySymbol}
+          setExpenseAndAmountList={setExpenseAndAmountList}
         />
       </div>
     );

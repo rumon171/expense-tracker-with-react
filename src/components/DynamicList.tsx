@@ -1,20 +1,22 @@
 import React from "react";
 import { List } from "@material-ui/core";
 import ExpensesListItem from './ExpensesListItem';
-  export interface ListItemObject {
+  export interface ExpenseAndAmounObject {
     expenseTitle: string;
     expenseAmount: string;
     id: number
   }
   interface ListItemsArray {
-    listItems: Array<ListItemObject>;
+    listItems: Array<ExpenseAndAmounObject>;
     currencySymbol: string;
+    setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
   }
 
   const DynamicList: React.FC<ListItemsArray> = (
     {
       listItems, 
-      currencySymbol
+      currencySymbol,
+      setExpenseAndAmountList
     }: ListItemsArray) => {
 
     return (
@@ -27,6 +29,8 @@ import ExpensesListItem from './ExpensesListItem';
                     expenseAmount={item.expenseAmount}
                     currencySymbol={currencySymbol}
                     item={item}
+                    items={listItems}
+                    setExpenseAndAmountList={setExpenseAndAmountList}
                   />
                 ))} 
             </List>
