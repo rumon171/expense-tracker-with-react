@@ -3,7 +3,6 @@ import { IconButton, List, ListItem, ListItemSecondaryAction, ListItemText } fro
 import DeleteIcon from '@material-ui/icons/Delete';
 
 interface Props {
-    id: number;
     expenseTitle: string;
     expenseAmount: string;
     currencySymbol: string;
@@ -12,7 +11,6 @@ interface Props {
 
 const ExpensesListItem: React.FC<Props> = (
     {
-        id, 
         expenseTitle, 
         expenseAmount,
         currencySymbol,
@@ -20,7 +18,7 @@ const ExpensesListItem: React.FC<Props> = (
     }: Props) => {
     return (
         <>
-            <ListItem key={id} className="list-item">
+            <ListItem className="list-item">
                 <ListItemText primary={expenseTitle} secondary={expenseAmount + currencySymbol}  />
                 <ListItemSecondaryAction onClick={onClick}>
                     <IconButton edge="end">

@@ -24,7 +24,7 @@ import ExpensesListItem from './ExpensesListItem';
             <List>
                 {listItems.map(item => (
                   <ExpensesListItem
-                    id={item.id}
+                    key={item.id}
                     expenseTitle={item.expenseTitle} 
                     expenseAmount={item.expenseAmount}
                     currencySymbol={currencySymbol}
