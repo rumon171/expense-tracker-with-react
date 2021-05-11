@@ -1,6 +1,7 @@
 import React from "react";
 import { IconButton, List, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
+import ExpensesListItem from './ExpensesListItem';
   export interface ListItemObject {
     expenseTitle: string;
     expenseAmount: string;
@@ -22,14 +23,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
         <>
             <List>
                 {listItems.map(item => (
-                    <ListItem key={Math.random()} className="list-item">
-                        <ListItemText primary={item.expenseTitle} secondary={item.expenseAmount + currencySymbol}  />
-                        <ListItemSecondaryAction onClick={onClick}>
-                            <IconButton edge="end">
-                                <DeleteIcon className="delete-btn" />
-                            </IconButton>
-                        </ListItemSecondaryAction>
-                    </ListItem>
+                  <ExpensesListItem
+                    id={item.id}
+                    expenseTitle={item.expenseTitle} 
+                    expenseAmount={item.expenseAmount}
+                    currencySymbol={currencySymbol}
+                    onClick={onClick}
+                  />
                 ))} 
             </List>
         </>
