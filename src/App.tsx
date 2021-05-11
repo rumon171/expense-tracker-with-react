@@ -26,12 +26,6 @@ export default function App() {
     const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
     const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
 
-    const DeleteListItem = (e: any) => {
-      //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
-      //let clickedListitem = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
-      //clickedListitem.remove();
-    }
-
     // function - SHOW ERROR WARNING WHEN INPUTS ARE MISSING
  
     return (
@@ -67,7 +61,7 @@ export default function App() {
         <DynamicList 
           listItems={ExpenseAndAmountList} 
           currencySymbol={selectedCurrencySymbol} 
-          onClick={DeleteListItem} 
+          //onClick={DeleteListItem} 
         />
       </div>
     );
