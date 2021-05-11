@@ -9,21 +9,13 @@ import ExpensesListItem from './ExpensesListItem';
   interface ListItemsArray {
     listItems: Array<ListItemObject>;
     currencySymbol: string;
-    //onClick: (value: any) => void;
   }
 
   const DynamicList: React.FC<ListItemsArray> = (
     {
       listItems, 
-      currencySymbol, 
-     // onClick
+      currencySymbol
     }: ListItemsArray) => {
-
-    const DeleteListItem = (e: any) => {
-      //console.log('e.target.parentNode.parentNode.parentNode.parentNode ', e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
-      //let clickedListitem = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
-      //clickedListitem.remove();
-    }
 
     return (
         <>
@@ -34,7 +26,7 @@ import ExpensesListItem from './ExpensesListItem';
                     expenseTitle={item.expenseTitle} 
                     expenseAmount={item.expenseAmount}
                     currencySymbol={currencySymbol}
-                    //onClick={onClick}
+                    item={item}
                   />
                 ))} 
             </List>

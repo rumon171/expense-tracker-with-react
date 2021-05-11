@@ -6,7 +6,8 @@ interface Props {
     expenseTitle: string;
     expenseAmount: string;
     currencySymbol: string;
-   // onClick: (value: any) => void;
+    item: object;
+    //onClick: (value: any) => void;
   }
 
 const ExpensesListItem: React.FC<Props> = (
@@ -14,14 +15,20 @@ const ExpensesListItem: React.FC<Props> = (
         expenseTitle, 
         expenseAmount,
         currencySymbol,
-       // onClick
+        item
     }: Props) => {
+
+    const DeleteListItem = () => {
+
+        console.log("item ", item);
+    }
+
     return (
         <>
             <ListItem className="list-item">
                 <ListItemText primary={expenseTitle} secondary={expenseAmount + currencySymbol}  />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end">
+                    <IconButton onClick={DeleteListItem} edge="end">
                         <DeleteIcon className="delete-btn" />
                     </IconButton>
                 </ListItemSecondaryAction>
