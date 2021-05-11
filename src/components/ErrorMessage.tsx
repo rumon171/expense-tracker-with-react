@@ -6,7 +6,7 @@ interface Props {
 const ErrorMessage: React.FC<Props> = ({className}: Props) => {
 return (
         <div className={className}>
-            Enter an expense and amount of money spent for it
+            Expense or amount value is invalid
         </div>
         );
     }

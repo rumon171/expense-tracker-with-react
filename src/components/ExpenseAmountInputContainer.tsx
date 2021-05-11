@@ -30,7 +30,7 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
 
     const AddItemToList = () => {
 
-    if (Expense !== '' && Amount!== '') {
+    if (Expense !== '' && Amount!== '' && Number(Amount) > 0) {
         setExpenseAndAmountList(
             [
                 ...expenseAndAmountList, 
