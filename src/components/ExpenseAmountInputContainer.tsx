@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import InputItem from './InputItem';
 import AddButton from './AddButton';
-
+import ErrorMessage from './ErrorMessage';
 interface ExpenseAndAmounObject {
     expenseTitle: string,
     expenseAmount: string,
@@ -26,9 +26,11 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
     
     const [Expense, setExpense] = useState<string>('');
     const [Amount, setAmount] = useState<string>('');
+    const [ifNotValidInputs, setIfNotValidInputs] = useState<boolean>(false);
 
-      const AddItemToList = () => {
-        
+    const AddItemToList = () => {
+
+    if (Expense !== '' && Amount!== '') {
         setExpenseAndAmountList(
             [
                 ...expenseAndAmountList, 
@@ -42,9 +44,13 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
 
         setExpense("");
         setAmount("");
+        setIfNotValidInputs(false);
+    } else {
+        setIfNotValidInputs(true);
+    }
 
-        setTotalExpensesAmount((prev: number) => prev + Number(Amount));
-      }
+    setTotalExpensesAmount((prev: number) => prev + Number(Amount));
+    }
 
     return (
         <div>
@@ -66,8 +72,10 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
             />
             <AddButton 
                 onClick={AddItemToList} 
-                content="Add expense" 
+                content="Add expense"
+
             />
+            { ifNotValidInputs === true ? <ErrorMessage className="error-message"/> : null }
         </div>
     );
 };

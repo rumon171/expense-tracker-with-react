@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import ErrorMessage from './components/ErrorMessage';
 import BalanceContainer from './components/BalanceContainer';
 import CurrencyContainer from './components/CurrencyContainer';
 import IncomeExpensesContainer from './components/IncomeExpensesContainer';
@@ -26,12 +25,9 @@ export default function App() {
     const [SelectedCurrency, setSelectedCurrency] = useState<string>('EUR');
     const selectedCurrencySymbol: string = currencySymbols[SelectedCurrency].symbol;
 
-    // function - SHOW ERROR WARNING WHEN INPUTS ARE MISSING
- 
     return (
       <div className="App">
         <div>
-          <ErrorMessage className="error-message"/>
           <h1>{appTitle}</h1>
           <BalanceContainer 
             totalBalance={TotalBalance} 
