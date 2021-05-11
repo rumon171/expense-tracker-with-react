@@ -30,8 +30,8 @@ export default function App() {
  
     return (
       <div className="App">
-        <ErrorMessage className="error-message"/>
         <div>
+          <ErrorMessage className="error-message"/>
           <h1>{appTitle}</h1>
           <BalanceContainer 
             totalBalance={TotalBalance} 
@@ -59,7 +59,7 @@ export default function App() {
           content="Add expense"  
         />
         <DynamicList 
-          listItems={ExpenseAndAmountList} 
+          expenseAndAmountList={ExpenseAndAmountList} 
           currencySymbol={selectedCurrencySymbol}
           setExpenseAndAmountList={setExpenseAndAmountList}
         />

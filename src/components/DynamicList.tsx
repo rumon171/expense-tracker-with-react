@@ -7,14 +7,14 @@ import ExpensesListItem from './ExpensesListItem';
     id: number
   }
   interface ListItemsArray {
-    listItems: Array<ExpenseAndAmounObject>;
+    expenseAndAmountList: Array<ExpenseAndAmounObject>;
     currencySymbol: string;
     setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
   }
 
   const DynamicList: React.FC<ListItemsArray> = (
     {
-      listItems, 
+      expenseAndAmountList, 
       currencySymbol,
       setExpenseAndAmountList
     }: ListItemsArray) => {
@@ -22,14 +22,14 @@ import ExpensesListItem from './ExpensesListItem';
     return (
         <>
             <List>
-                {listItems.map(item => (
+                {expenseAndAmountList.map(item => (
                   <ExpensesListItem
                     key={item.id}
                     expenseTitle={item.expenseTitle} 
                     expenseAmount={item.expenseAmount}
                     currencySymbol={currencySymbol}
                     item={item}
-                    items={listItems}
+                    items={expenseAndAmountList}
                     setExpenseAndAmountList={setExpenseAndAmountList}
                   />
                 ))} 
