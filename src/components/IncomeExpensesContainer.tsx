@@ -1,7 +1,6 @@
 import React from "react";
 import InputItem from './InputItem';
 import Grid from '@material-ui/core/Grid';
-
 interface Props {
     income: string;
     setIncome: (value: string) => void; 

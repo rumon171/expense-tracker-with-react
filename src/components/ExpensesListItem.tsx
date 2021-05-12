@@ -1,19 +1,15 @@
 import React from "react";
 import { IconButton, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
+import { ExpenseAndAmountObject } from '../ExpenseAndAmountObject';
 
-export interface ExpenseAndAmounObject {
-    expenseTitle: string;
-    expenseAmount: string;
-    id: number
-  }
 interface Props {
     expenseTitle: string;
     expenseAmount: string;
     currencySymbol: string;
-    item: ExpenseAndAmounObject;
-    items: Array<ExpenseAndAmounObject>;
-    setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
+    item: ExpenseAndAmountObject;
+    items: Array<ExpenseAndAmountObject>;
+    setExpenseAndAmountList: (value: Array<ExpenseAndAmountObject>) => void;
   }
 
 const ExpensesListItem: React.FC<Props> = (
@@ -28,7 +24,6 @@ const ExpensesListItem: React.FC<Props> = (
 
     const DeleteListItem = () => {
         setExpenseAndAmountList(items.filter(el => el.id !== item.id));
-        console.log("items ", items);
     }
 
     return (

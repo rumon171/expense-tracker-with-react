@@ -3,14 +3,10 @@ import { useState } from 'react';
 import InputItem from './InputItem';
 import AddButton from './AddButton';
 import ErrorMessage from './ErrorMessage';
-interface ExpenseAndAmounObject {
-    expenseTitle: string,
-    expenseAmount: string,
-    id: number  
-}
+import { ExpenseAndAmountObject } from '../ExpenseAndAmountObject';
 interface Props {
-    expenseAndAmountList: Array<ExpenseAndAmounObject>;
-    setExpenseAndAmountList: (value: Array<ExpenseAndAmounObject>) => void;
+    expenseAndAmountList: Array<ExpenseAndAmountObject>;
+    setExpenseAndAmountList: (value: Array<ExpenseAndAmountObject>) => void;
     setTotalExpensesAmount: (value: any) => void;
     content: string;
 }

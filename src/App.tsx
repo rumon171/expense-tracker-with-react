@@ -6,7 +6,7 @@ import CurrencyContainer from './components/CurrencyContainer';
 import IncomeExpensesContainer from './components/IncomeExpensesContainer';
 import ExpenseAmountInputContainer from './components/ExpenseAmountInputContainer';
 import DynamicList from './components/DynamicList';
-import { currencySymbols } from './components/CurrenciesSymbolsList';
+import { currencySymbols } from './CurrenciesSymbolsList';
 
 export default function App() {
     const appTitle: string = "Expense Tracker";

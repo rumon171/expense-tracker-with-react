@@ -5,7 +5,11 @@ interface Props {
     onChange: (value: any) => void;
 }
 
-const CurrencyContainer: React.FC<Props> = ({className, onChange}: Props) => {
+const CurrencyContainer: React.FC<Props> = (
+    {
+    className, 
+    onChange
+}: Props) => {
 return (
            <div className={className}>
                 <h3>Currency</h3>

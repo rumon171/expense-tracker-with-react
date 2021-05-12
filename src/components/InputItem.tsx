@@ -9,7 +9,13 @@ interface Props {
     value: string;
 }
 
-const InputItem: React.FC<Props> = ({title, onChange, type, placeholder, value}: Props) => {
+const InputItem: React.FC<Props> = ({
+    title, 
+    onChange, 
+    type, 
+    placeholder, 
+    value
+}: Props) => {
     return (
         <div className="inputContainer">
             <label>{title}</label>
