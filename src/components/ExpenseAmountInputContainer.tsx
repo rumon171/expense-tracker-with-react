@@ -38,6 +38,7 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
             ]
         );
 
+        setTotalExpensesAmount((prev: number) => prev + Number(Amount));
         setExpense("");
         setAmount("");
         setIfNotValidInputs(false);
@@ -45,7 +46,6 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
         setIfNotValidInputs(true);
     }
 
-    setTotalExpensesAmount((prev: number) => prev + Number(Amount));
     }
 
     return (
