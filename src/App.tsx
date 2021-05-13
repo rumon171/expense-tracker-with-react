@@ -31,9 +31,6 @@ export default function App() {
           <h1>{appTitle}</h1>
           <BalanceContainer 
             totalBalance={TotalBalance} 
-            setTotalBalance={setTotalBalance}
-            income={Income}
-            totalExpenses={TotalExpensesAmount} 
             className="balance-container" 
             currencySymbol={selectedCurrencySymbol} 
           />
@@ -46,13 +43,16 @@ export default function App() {
             setIncome={setIncome} 
             totalExpenses={TotalExpensesAmount} 
             currencySymbol={selectedCurrencySymbol}
+            setTotalBalance={setTotalBalance}
           />
         </div>
         <ExpenseAmountInputContainer 
           expenseAndAmountList={ExpenseAndAmountList}
           setExpenseAndAmountList={setExpenseAndAmountList}
           setTotalExpensesAmount={setTotalExpensesAmount}
-          content="Add expense"  
+          setTotalBalance={setTotalBalance}
+          income={Income}
+          totalExpenses={TotalExpensesAmount}
         />
         <DynamicList 
           expenseAndAmountList={ExpenseAndAmountList} 

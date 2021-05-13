@@ -8,15 +8,19 @@ interface Props {
     expenseAndAmountList: Array<ExpenseAndAmountObject>;
     setExpenseAndAmountList: (value: Array<ExpenseAndAmountObject>) => void;
     setTotalExpensesAmount: (value: any) => void;
-    content: string;
+    setTotalBalance: (value: number) => void;
+    income: string;
+    totalExpenses: number; 
 }
 
 const ExpenseAmountInputContainer: React.FC<Props> = (
         {
             expenseAndAmountList, 
             setExpenseAndAmountList,
-            setTotalExpensesAmount, 
-            content
+            setTotalExpensesAmount,
+            setTotalBalance, 
+            income,
+            totalExpenses,
         }: Props
     ) => {
     
@@ -25,27 +29,25 @@ const ExpenseAmountInputContainer: React.FC<Props> = (
     const [ifNotValidInputs, setIfNotValidInputs] = useState<boolean>(false);
 
     const AddItemToList = () => {
-
-    if (Expense !== '' && Amount!== '' && Number(Amount) > 0) {
-        setExpenseAndAmountList(
-            [
-                ...expenseAndAmountList, 
-                { 
-                    expenseTitle: Expense,
-                    expenseAmount: Amount,
-                    id: Math.random() * 1000
-                }
-            ]
-        );
-
-        setTotalExpensesAmount((prev: number) => prev + Number(Amount));
-        setExpense("");
-        setAmount("");
-        setIfNotValidInputs(false);
-    } else {
-        setIfNotValidInputs(true);
-    }
-
+        if (Expense !== '' && Amount!== '' && Number(Amount) > 0) {
+            setExpenseAndAmountList(
+                [
+                    ...expenseAndAmountList, 
+                    { 
+                        expenseTitle: Expense,
+                        expenseAmount: Amount,
+                        id: Math.random() * 1000
+                    }
+                ]
+            );
+            setTotalExpensesAmount((prev: number) => prev + Number(Amount));
+            setExpense("");
+            setAmount("");
+            setIfNotValidInputs(false);
+            setTotalBalance(Number(income) - totalExpenses);
+        } else {
+            setIfNotValidInputs(true);
+        }
     }
 
     return (
