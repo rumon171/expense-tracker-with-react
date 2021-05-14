@@ -19,7 +19,7 @@ const IncomeExpensesContainer: React.FC<Props> = ({
 
     const countTotalBalance = (value: any) => {
         setIncome(value);
-        setTotalBalance(Number(income) - totalExpenses);
+        setTotalBalance(Number(value) - totalExpenses);
     }
 
     return (
