@@ -19,7 +19,7 @@ My motivation?<br />
 
 Why building Expense Tracker?<br />
 
-💰 &nbsp; It's a one pager app having simple logic. Building it was a great way to get familiar with React<br />
+💰 &nbsp;It's a one pager app having simple logic. Building it was a great way to get familiar with React<br />
 <br />
 <br />
 
