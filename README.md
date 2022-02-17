@@ -8,6 +8,7 @@ Technologies used: <br />
 - Typescript<br />
 - Node.js<br />
 - Express<br />
+- Material-UI
 <br />
 <br />
 
